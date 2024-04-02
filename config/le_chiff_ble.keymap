@@ -13,54 +13,7 @@
 &lt { quick_tap_ms = <200>; };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 2>;
-        };
-
-        right_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <6 7>;
-        };
-
-        left_par {
-            bindings = <&kp LPAR>;
-            key-positions = <12 13>;
-        };
-
-        right_par {
-            bindings = <&kp RPAR>;
-            key-positions = <16 17>;
-        };
-
-        left_prc {
-            bindings = <&kp LBRC>;
-            key-positions = <22 23>;
-        };
-
-        right_prc {
-            bindings = <&kp RBRC>;
-            key-positions = <27 26>;
-        };
-
-        blsh {
-            bindings = <&kp BSLH>;
-            key-positions = <4 5>;
-        };
-
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <14 15>;
-        };
-
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <19 18>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         hm: homerow_mods {
@@ -80,10 +33,10 @@
         default {
             label = "Qwerty";
             bindings = <
-&kp Q       &kp W           &kp E        &kp R             &kp T        &kp Y       &kp U              &kp I        &kp O            &kp P
-&hm LGUI A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G        &kp H       &hm RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMI
-&kp Z       &kp X           &kp C        &kp V             &kp B        &kp N       &kp M              &kp COMMA    &kp DOT          &kp FSLH
-                            &kp TAB                        &lt 1 SPACE  &kp C_MUTE  &lt 2 BACKSPACE                 &kp RCTRL
+&kp Q  &kp W        &kp E       &kp R         &kp T        &kp Y       &kp U            &kp I       &kp O        &kp P
+&kp A  &hm LCTRL S  &hm LGUI D  &hm LALT F    &kp G        &kp H       &hm RALT J       &hm RWIN K  &hm RCTRL L  &kp ENTER
+&kp Z  &kp X        &kp C       &hm LSHIFT V  &kp B        &kp N       &hm RSHIFT M     &kp COMMA   &kp DOT      &lt 2 SLASH
+                    &lt 3 TAB                 &lt 1 SPACE  &kp C_MUTE  &lt 3 BACKSPACE              &lt 3 K_APP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -91,28 +44,37 @@
 
         layer_1 {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4  &kp N5   &kp NUMBER_6  &kp N7           &kp N8     &kp N9  &kp N0
-&bootloader   &trans        &kp LC(UP_ARROW)  &trans        &kp F12  &kp MINUS     &kp EQUAL        &kp GRAVE  &trans  &kp SQT
-&trans        &trans        &trans            &trans        &trans   &trans        &trans           &trans     &trans  &trans
-                            &trans                          &trans   &trans        &kp RIGHT_SHIFT             &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4       &kp N5         &kp NUMBER_6   &kp N7         &kp N8         &kp N9          &kp N0
+&kp ESCAPE    &trans        &kp MINUS         &kp EQUAL          &none          &kp LEFT       &kp DOWN       &kp UP_ARROW   &kp RIGHT       &kp ENTER
+&kp LSHIFT    &kp GRAVE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp SEMICOLON  &kp SQT        &kp LS(COMMA)  &kp LS(PERIOD)  &kp LS(SLASH)
+                            &trans                               &trans         &trans         &kp BACKSPACE                 &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&kp ESC       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &trans  &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN  &trans
-&kp CAPSLOCK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp AT_SIGN      &trans  &kp LEFT     &kp DOWN_ARROW  &kp RIGHT      &trans
-&kp DELETE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT          &trans  &trans       &trans          &trans         &trans
-                               &trans                            &trans           &trans  &trans                       &trans
+&none         &none         &none         &none       &none   &none   &none           &none       &none         &to 4
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       &none   &none   &kp C_PREVIOUS  &kp C_PLAY  &kp C_NEXT    &trans
+&none         &none         &none         &bt BT_CLR  &none   &trans  &kp C_VOL_DN    &kp K_MUTE  &kp C_VOL_DN  &trans
+                            &trans                    &trans  &trans  &trans                      &bootloader
             >;
         };
 
         layer_3 {
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR_ALL  &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                              &trans                &trans  &trans  &trans          &trans
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5   &kp HOME  &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&kp F11  &kp F12  &trans  &trans  &trans   &trans    &trans         &trans        &trans     &kp DEL
+                  &trans          &trans   &trans    &trans                       &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &to 0
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+              &none         &none  &none  &none         &none
             >;
         };
     };
