@@ -101,7 +101,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-low$$
   - MUTE
-  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
