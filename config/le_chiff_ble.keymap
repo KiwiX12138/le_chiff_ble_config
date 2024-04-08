@@ -53,9 +53,9 @@
 
         layer_2 {
             bindings = <
-&none         &none         &none         &none       &none   &none   &none           &none       &none         &to 4
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       &none   &none   &kp C_PREVIOUS  &kp C_PLAY  &kp C_NEXT    &trans
-&none         &none         &none         &bt BT_CLR  &none   &trans  &kp C_VOL_DN    &kp K_MUTE  &kp C_VOL_DN  &trans
+&none         &none         &none         &none       &none   &none   &none           &none       &none            &to 4
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       &none   &none   &kp C_PREVIOUS  &kp C_PLAY  &kp C_NEXT       &trans
+&none         &none         &none         &bt BT_CLR  &none   &trans  &kp C_VOL_DN    &kp K_MUTE  &kp C_VOLUME_UP  &trans
                             &trans                    &trans  &trans  &trans                      &bootloader
             >;
         };
